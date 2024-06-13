@@ -21,7 +21,7 @@ Welcome to the Contact Manager app! This console application allows you to manag
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/Contacts-Manager.git
+   git clone https://github.com/Loiy2002-SW/Contact-Manager.git
    cd Contacts-Manager
 2. **Clone the Repository**:
    ```bash
