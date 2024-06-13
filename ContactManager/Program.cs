@@ -12,22 +12,21 @@
         //Add contact method
         public static List<string> AddContact(string contact)
         {
-
-            return new List<string> { };
+            contacts.Add(contact);
+            return contacts;
         }
 
         //Remove contact method
         public static List<string> RemoveContact(string contact)
         {
-
-            return new List<string> { };
+            contacts.Remove(contact);
+            return contacts;
         }
 
         //View All Contacts method
         public static List<string> ViewAllContacts()
         {
-
-            return new List<string> { };
+            return contacts;
         }
     }
 }
