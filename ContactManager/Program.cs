@@ -17,11 +17,14 @@ namespace ContactManager
         //Console (READ & WRITE)
         public static void ContactsManager()
         {
-            Console.WriteLine("Welcome to the Contacts maneger app");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("Welcome to the Contacts maneger app\n");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Choose what you want to do: \n 1 = Add Contact. \n 2 = Remove Contact. \n 3 = View Contacts.");
 
             ChooseOperation();
-
+            
         }
 
 
@@ -31,12 +34,14 @@ namespace ContactManager
             if (!contacts.Contains(contact))
             {
                 contacts.Add(contact);
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"{contact} is successfully added to contacts.");
             }
             else {
 
                 //this was only for Xunit testing
                 //throw new ArgumentException("Contact already exists.");
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("The contact is already exists.");
                 
 
@@ -51,12 +56,14 @@ namespace ContactManager
             if (contacts.Contains(contact)) {
 
                 contacts.Remove(contact);
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"{contact} is successfully removed from.");
             }
             else
             {
                 //this was only for Xunit testing
                 //throw new ArgumentException("Contact doesn't exist.");
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"[{contact}] is not in the contacts list.");
 
             }
@@ -74,6 +81,7 @@ namespace ContactManager
 
                 //this was only for Xunit testing
                 //throw new ArgumentException("There are no conatacts.");
+                Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine("The contact list is empty, choose option 1 to add some....");
                 return contacts;
                
@@ -96,7 +104,10 @@ namespace ContactManager
                 if (answer == "1" || answer == "2" || answer == "3")
                     isRightAnswer = true;
                 else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Please choose a correct number (1, 2 or 3)");
+                }
 
             }
 
@@ -113,7 +124,9 @@ namespace ContactManager
                     break;
 
                 case "3":
-                    Console.WriteLine($"[{String.Join(", ", ViewAllContacts())}]");
+
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine($"[{String.Join(", ", ViewAllContacts())}]\n");
                     AskIfTheUserWantToDoAnotherOperation();
                     break;
 
@@ -123,6 +136,7 @@ namespace ContactManager
         private static void AskIfTheUserWantToDoAnotherOperation()
         {
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Do you want to make another operation? (y/n)");
 
             bool isValidAnswer = false;
@@ -136,7 +150,8 @@ namespace ContactManager
                 if (answer.ToLower() == "y")
                 {
 
-                    Console.WriteLine("Choose what you want to do: \n 1 = Add Contact. \n 2 = Remove Contact. \n 3 = View Contacts.");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Choose what you want to do: \n 1 = Add Contact. \n 2 = Remove Contact. \n 3 = View Contacts.\n");
                     ChooseOperation();
                     isValidAnswer = true;
                 }
@@ -146,7 +161,10 @@ namespace ContactManager
                     isValidAnswer = true;
                 }
                 else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Please enter a valid value (y or n)");
+                }
             }
 
         }
@@ -158,6 +176,7 @@ namespace ContactManager
             string name = "";
 
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Enter the contact name: ");
 
             while (!isValidName)
@@ -165,7 +184,10 @@ namespace ContactManager
                 name = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(name) || name.Length < 2 || Regex.IsMatch(name, @"\d"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Please enter a valid name (minimum length 2 and no numbers):");
+                }
 
                 else
                     isValidName = true;
@@ -182,6 +204,7 @@ namespace ContactManager
             string name = "";
 
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("Enter the contact name: ");
 
             while (!isValidName)
@@ -189,7 +212,10 @@ namespace ContactManager
                 name = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(name) || name.Length < 2 || Regex.IsMatch(name, @"\d"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"Please enter a valid name (minimum length 2 and no numbers):");
+                }
 
                 else
                     isValidName = true;
