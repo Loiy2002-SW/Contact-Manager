@@ -12,7 +12,16 @@
         //Add contact method
         public static List<string> AddContact(string contact)
         {
-            contacts.Add(contact);
+            if (!contacts.Contains(contact))
+            {
+                contacts.Add(contact);
+            }
+            else {
+
+                throw new ArgumentException("Contact already exists.");
+
+            }
+
             return contacts;
         }
 
