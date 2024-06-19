@@ -17,8 +17,11 @@ namespace ContactManager
         //Console (READ & WRITE)
         public static void ContactsManager()
         {
+
             Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("====================================\n");
             Console.WriteLine("Welcome to the Contacts maneger app\n");
+            Console.WriteLine("====================================\n");
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Choose what you want to do: \n 1 = Add Contact. \n 2 = Remove Contact. \n 3 = View Contacts.");
@@ -28,7 +31,7 @@ namespace ContactManager
         }
 
 
-        //Add contact method
+        //Add contact if it is not in the list
         public static List<string> AddContact(string contact)
         {
             if (!contacts.Contains(contact))
@@ -42,7 +45,7 @@ namespace ContactManager
                 //this was only for Xunit testing
                 //throw new ArgumentException("Contact already exists.");
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("The contact is already exists.");
+                Console.WriteLine("The contact is already exists!");
                 
 
             }
@@ -50,7 +53,7 @@ namespace ContactManager
             return contacts;
         }
 
-        //Remove contact method
+        //Remove contact if it is already in the list
         public static List<string> RemoveContact(string contact)
         {
             if (contacts.Contains(contact)) {
