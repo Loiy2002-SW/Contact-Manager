@@ -1,4 +1,4 @@
-# Contact Manager
+﻿# Contact Manager Console app 📞
 
 Welcome to the Contact Manager app! This console application allows you to manage a list of contacts. You can add, remove, and view contacts using a simple menu-driven interface.
 
@@ -11,13 +11,13 @@ Welcome to the Contact Manager app! This console application allows you to manag
 - [Helper Methods](#helper-methods)
 - [Unit Tests](#unit-tests)
 
-## Features
+### Features
 
 - **Add Contact**: Add a new contact to your list.
 - **Remove Contact**: Remove an existing contact from your list.
 - **View All Contacts**: View all contacts in your list.
 
-## Installation
+### Installation
 
 1. **Clone the Repository**:
    ```bash
@@ -30,7 +30,7 @@ Welcome to the Contact Manager app! This console application allows you to manag
    ```bash
    dotnet run --project ContactManager
 
-## Usage
+### Usage
 
 1. Starting the Application
 
@@ -56,7 +56,7 @@ Welcome to the Contact Manager app! This console application allows you to manag
 	1. Choose option `3`.
 	2. The application will display the list of all contacts.
 
-## Contact Methods
+### Contact Methods
 
 - **AddContact(string contact)**:
   Adds a new contact to the list if it doesn't already exist.
@@ -67,7 +67,7 @@ Welcome to the Contact Manager app! This console application allows you to manag
 - **ViewAllContacts()**:
   Returns the list of all contacts.
 
-## Helper Methods
+### Helper Methods
 
 - **ContactsManager()**:
   Displays the welcome message and the main menu.
@@ -84,7 +84,7 @@ Welcome to the Contact Manager app! This console application allows you to manag
 - **AskForContactNameToBeRemoved()**:
   Prompts the user to enter a valid contact name for removing.
 
-## Unit Tests
+### Unit Tests
 
 Ensure that you have `xUnit` installed and set up for testing. Below are the tests available:
 
@@ -100,6 +100,6 @@ Ensure that you have `xUnit` installed and set up for testing. Below are the tes
 - **ViewAllContacts_ReturnsAllContacts**:
   Tests if all contacts are returned correctly.
 
-## Contributing
+### Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
